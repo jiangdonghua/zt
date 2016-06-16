@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>zt</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="css/swiper-3.3.1.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/swiper-3.3.1.jquery.min.js"></script>
+	<script src="js/swiper.animate1.0.2.min.js"></script>
+	<script src="js/rem.js"></script>
+	<link rel="stylesheet" href="font1/css/font-awesome.min.css">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html,body,.main{
+			height: 100%;
+			font-family: "微软雅黑";
+		}
+		.main{
+			position: relative;
+		}
+		.swiper-container{
+			height: 100%;
+		}
+		.slide1,.slide2{
+			background:url("img/bg1.jpg");
+			background-size: 100% 100%;
+			position: relative;
+		}
+		.slide3{
+			background:url("img/bg3.jpg");
+			background-size: 100% 100%;
+			position: relative;
+		}
+		.txt1{
+			font-size: 0.68rem;
+			color: #000;
+			text-align: center;
+			position: absolute;
+			width: 100%;
+			top: 5.2%;
+		}
+		.txt2{
+			font-size: 0.30rem;
+			color: #000;
+			text-align: center;
+			position: absolute;
+			width: 100%;
+			top: 15%;
+		}
+		.phone1{
+			width: 70%;
+			height: 63%;
+			position: relative;
+			left: 50%;
+			margin-left: -35%;
+			top: 23%;
+			overflow: hidden;
+		}
+		.phone1 img,.phone2 img{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+		.txt3{
+			font-size: 0.34rem;
+			color: #000;
+			text-align: center;
+			position: absolute;
+			width: 100%;
+			bottom: 3%;
+		}
+		.song{
+			position: absolute;
+			visibility: hidden;
+		}
+		.music_pic{
+			position: absolute;
+			top: 6.0%;
+			right: 0.4rem;
+			width: 0.34rem;
+			height: 0.34rem;
+			border-radius: 50%;
+			visibility: visible;
+			z-index: 666;
+			border: 1px solid #fff;
+			background:#666 url("img/music.png") no-repeat;
+			background-size: 90% 80%;
+		}
+		.span{
+			color: #fff;
+			font-size: 16px;
+			position: absolute;
+			top: 6.0%;
+			right: 1.0rem;
+			z-index: 667;
+			-webkit-animation: span 1.7s ease-in-out both;
+	animation: span 1.7s ease-in-out both;
+		}
+		@-webkit-keyframes span {
+		  0% {
+		    visibility: visible;
+		    opacity: 1;
+		  }
+
+		  100% {
+		  	opacity: 0;
+		  }
+		}
+		.roDiv{
+			position: absolute;
+			top: 0%;
+			right: 0.5rem;
+			z-index: 999;
+			 -webkit-animation-name:roDiv;
+			  animation-name:roDiv;
+			  -webkit-animation-duration:3.0s;
+			  animation-iteration-count:infinite;
+			  width: 0.5rem;
+			height: 0.5rem;
+		}
+		.roDiv img{
+			width: 80%;
+			height: 80%;
+		}
+		@-webkit-keyframes roDiv {
+		  0% {
+		    opacity: 0;
+		    -webkit-transform:translateX(0px) translateY(0px) scale(0.8);
+
+		  }
+		  50% {
+				opacity: 1;
+			}
+		  100% {
+			  	opacity: 0;
+			  	-webkit-transform:translateX(-30px) translateY(-25px) scale(0.1);
+
+			  }
+			}
+			.arr{
+				position: absolute;
+				right: 0.15rem;
+				top: 50%;
+				width: 0.56rem;
+				height: 1.0rem;
+				margin-top: -0.5rem;
+				color: #fff;
+				font-size: 0.7rem;
+				z-index: 999;
+				-webkit-animation: arrMoveRight ease 1.5s both infinite;
+			}
+	@-webkit-keyframes arrMoveRight {
+	0% { -webkit-transform: translateX(-0%); opacity:1;}
+	50% { -webkit-transform: translateX(-20%); opacity:0.5;}
+	100% { -webkit-transform: translateX(-0%); opacity:1;}
+}
+
+.xingneng{
+			font-size: 0.48rem;
+			color: #000;
+			text-align: center;
+			position: absolute;
+			width: 100%;
+			padding-top: 26%;
+			z-index: 0;
+			overflow: hidden;
+			height: 20%;
+}
+.xingnengTxt{
+			font-size: 0.28rem;
+			text-indent: 0.64rem;
+			color: #000;
+			width: 88%;
+			margin: 0% 6%;
+			position: absolute;
+			text-align: left;
+			bottom: 13.8%;
+			/*//text-shadow: 1px 1px 2px red;*/
+			font-family: "微软雅黑";
+			z-index: 1;
+}
+.phone2{
+	width: 96%;
+	height: 65%;
+	position: relative;
+	left: 50%;
+	margin-left: -48%;
+	top:10%;
+	z-index: 1;
+}
+.shakeq{
+	position: relative;
+	top:20%;
+	width: 80%;
+	left: 50%;
+	height:10%;
+	margin-left: -40%;
+	font-size: 0.48rem;
+	font-weight: bold;
+	color: #fff;
+}
+.shake1{
+	width: 100%;
+	text-align:left;
+	height: 49%;
+	margin-bottom: 2%;
+}
+.shake2{
+	width: 100%;
+	text-align:right;
+	height: 49%;
+}
+.shake3{
+	width: 100%;
+	text-align:center;
+	height: 49%;
+}
+.phone3{
+	width: 92%;
+	height: 36%;
+	left: 50%;
+	margin-left: -46%;
+	top: 36%;
+	position: absolute;
+}
+.phone3 img{
+	width: 100%;
+	height: 100%;
+	display:block;
+	transform:rotateX(-0deg);
+}
+.phone3Txt{
+			font-size: 0.30rem;
+			text-indent: 0.64rem;
+			color: #fff;
+			width: 88%;
+			margin: 0% 6%;
+			position: absolute;
+			text-align: left;
+			bottom: 20%;
+			/*//text-shadow: 1px 1px 2px red;*/
+			z-index:9999;
+			font-weight: 100;
+}
+.slide4{
+	background:url("img/bg4.jpg");
+			background-size: 100% 100%;
+			position: relative;
+}
+.slide5{
+	background:url("img/bgg5.jpg");
+			background-size: 100% 100%;
+			position: relative;
+}
+.shakew{
+	position: relative;
+	top:73%;
+	width: 80%;
+	left: 50%;
+	height:10%;
+	margin-left: -40%;
+	font-size: 0.48rem;
+	font-weight: bold;
+	color: #fff;
+}
+.phone5{
+	width: 100%;
+	height: 66%;
+	left: 0%;
+	top: 8%;
+	position: absolute;
+}
+.phone5 img{
+	width: 100%;
+	height: 100%;
+	display:block;
+	transform:rotateX(-0deg);
+}
+.phone5Txt{
+			font-size: 0.30rem;
+			text-indent: 0.64rem;
+			color: #fff;
+			width: 88%;
+			margin: 0% 6%;
+			position: absolute;
+			text-align: left;
+			bottom: 10%;
+			/*//text-shadow: 1px 1px 2px red;*/
+			z-index:9999;
+			font-weight: 100;
+}
+.shake5{
+	width: 100%;
+	text-align:center;
+	height: 40%;
+}
+.slide6{
+	background:url("img/bg6.jpg");
+			background-size: 100% 100%;
+			position: relative;
+}
+.phone6{
+	width: 100%;
+	height: 66%;
+	left: 0%;
+	top: 0%;
+	position: absolute;
+}
+.phone6 img{
+	width: 100%;
+	height: 100%;
+	display:block;
+	transform:rotateX(-0deg);
+}
+.shaker{
+	position: relative;
+	top:67%;
+	width: 80%;
+	left: 50%;
+	height:10%;
+	margin-left: -40%;
+	font-size: 0.48rem;
+	font-weight: bold;
+	color: #333;
+}
+.phone6Txt{
+			font-size: 0.30rem;
+			text-indent: 0.64rem;
+			color: #333;
+			width: 88%;
+			margin: 0% 6%;
+			position: absolute;
+			text-align: left;
+			bottom: 5%;
+			/*//text-shadow: 1px 1px 2px red;*/
+			z-index:9999;
+			font-weight: 100;
+}
+</style>
+</head>
+<body>
+	<div class="main">
+	<div class="icon-angle-left arr"></div>
+	<audio src="img/1.mp3" id="music" class="song" autoplay="autoplay"></audio>
+		<div class="music_pic"></div>
+		<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide slide1">
+        <div class=" txt1">
+        	<p class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.3s">曲之有道</p>
+        </div>
+        	<p class="ani txt2" swiper-animate-effect="slideInUp" swiper-animate-duration="1.3s" swiper-animate-delay="0.3s">双  面2.5D曲面屏幕，精彩不止一面</p>
+        	<div class="phone1"><img class="ani" swiper-animate-effect="slideInUp" swiper-animate-duration="2s" swiper-animate-delay="0.6s" src="img/phone1.png" alt=""></div>
+        	<p class="ani txt3" swiper-animate-effect=" fadeRotateflipInY" swiper-animate-duration="8s" swiper-animate-delay="0.6s" swiper-animation-iteration-count="6">T9E双曲面屏幕闪耀登场</p>
+        </div>
+        <div class="swiper-slide slide2">
+        	<div class="ani xingneng">
+        		<p class="ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0s">性能与外观，为你而生</p>
+        	</div>
+        	<div class="ani phone2" swiper-animate-effect="rotateInDownRight" swiper-animate-duration="2.0s" swiper-animate-delay="0.5s"><img src="img/phone2.png" alt=""></div>
+        	<p class="ani xingnengTxt" swiper-animate-effect="fadeIn" swiper-animate-duration="2.0s" swiper-animate-delay="1.0s">T9E突破创新的优美设计风格，兼顾性能与美观，在万众瞩目中闪耀登场。玻璃与金属材质的结合缔造美妙外观。四色机身华彩飞扬。</p>
+        </div>
+        <div class="swiper-slide slide3">
+        	<div class="ani shakeq" swiper-animate-effect="swinga" swiper-animate-duration="8s" wiper-animate-delay="8s">
+        		<p class="shake1">双2.5D弧面玻璃</p>
+        		<p class="shake2">            真正打动人的美</p>
+        	</div>
+        	<div class="phone3 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="2.0s" swiper-animate-delay="0.0s">
+        		<img  src="img/phone3.png" alt="">
+        	</div>
+        	<p class="phone3Txt ani"  swiper-animate-effect="fadeIn" swiper-animate-duration="2.0s" swiper-animate-delay="1.3s">T9E用双面流畅的弧线玻璃来阐述极简的自然美学，宛如清晨的露珠骤然滴落，汇聚成莹润的机身，亦动亦静。</p>
+        </div>
+        <div class="swiper-slide slide4">
+        	<div class="ani shakeq" swiper-animate-effect="flipInY" swiper-animate-duration="2s" wiper-animate-delay="4s">
+        		<p class="shake3"> 精彩不止一面  </p>
+        	</div>
+        	<div class="phone3 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="2.0s" swiper-animate-delay="0.0s">
+        		<img  src="img/phone4.png" alt="">
+        	</div>
+        	<p class="phone3Txt ani"  swiper-animate-effect="zoomIn" swiper-animate-duration="2.0s" swiper-animate-delay="1.3s">T9E用双面流畅的弧线玻璃来阐述极简的自然美学，宛如清晨的露珠骤然滴落，汇聚成莹润的机身，亦动亦静。</p>
+        </div>
+        <div class="swiper-slide slide5">
+        	<div class="phone5 ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="2.0s" swiper-animate-delay="0.0s">
+        		<img  src="img/bg5.png" alt="">
+        	</div>
+        	<div class="ani shakew" swiper-animate-effect="flipInX" swiper-animate-duration="2s" wiper-animate-delay="4s">
+        		<p class="shake5"> 金属与玻璃的巧妙融合 </p>
+        	</div>
+        	<p class="phone5Txt ani"  swiper-animate-effect="rotateInUpLeft" swiper-animate-duration="2.0s" swiper-animate-delay="1.3s"> 金属中框使用高档的锌铝合金，结实稳固锻造坚毅品格。正背两面使用第三代康宁大猩猩玻璃，抗损性能值得信赖。 </p>
+        </div>
+        <div class="swiper-slide slide6">
+        	<div class="phone6 ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="2.0s" swiper-animate-delay="0.0s">
+        		<img  src="img/phone6.png" alt="">
+        	</div>
+        	<div class="ani shaker" swiper-animate-effect="swinga" swiper-animate-duration="8s" wiper-animate-delay="8s">
+        		<p class="shake1"> 一体纤致高金属机身</p>
+        		<p class="shake2">                              尽享感握之美</p>
+        	</div>
+        	<p class="phone6Txt ani"  swiper-animate-effect="rotateInUpLeft" swiper-animate-duration="2.0s" swiper-animate-delay="1.3s"> 金属中框使用高档的锌铝合金，结实稳固锻造坚毅品格。正背两面使用第三代康宁大猩猩玻璃，抗损性能值得信赖。 </p>
+        </div>
+    </div>
+	</div>
+</body>
+<script>
+  var mySwiper = new Swiper ('.swiper-container', {
+    direction: 'horizontal',
+    loop: true,
+    onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+    swiperAnimateCache(swiper); //隐藏动画元素
+    swiperAnimate(swiper); //初始化完成开始动画
+  },
+  onSlideChangeEnd: function(swiper){
+    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+  }
+  })
+  var ado=document.getElementById("music");
+  var i=0;
+  $(".music_pic").click(function() {
+  	if( ado.paused){
+  		ado.play();
+  		$start=$('<span class="span">关闭</span>');
+  		$(".main").append($start);
+  		timer=setInterval( roll,14);
+  		timer2=setInterval( rollDiv,1000);
+  	}else{
+  		ado.pause();
+  		$start=$('<span class="span">开始</span>');
+  		//$start.text('');
+  		$(".music_pic").css({transform:'rotate('+0+'deg)'})
+  		$(".main").append($start);
+  		$(".main").find("span").remove();
+  		clearInterval(timer);
+  		clearInterval(timer2);
+
+
+  	}
+  });
+  	
+  	timer=setInterval( roll,14);
+  	function roll(){
+  		i+=2;
+  	$(".music_pic").css({transform:'rotate('+i+'deg)'})
+  	}
+  	function rollDiv(){
+  		$("span").remove();
+  		//$("i").remove();
+  		$div=$('<span><img src="img/music.png" alt="" /></span>');
+  		$div.addClass('roDiv');
+  		$(".main").append($div);
+  	}
+  	rollDiv();
+  	timer2=setInterval( rollDiv,1000);
+  // flipInY
+  </script>
+</html>
